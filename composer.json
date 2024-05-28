@@ -1,0 +1,17 @@
+{
+    "name": "muqsit/playervaults",
+    "autoload": {
+        "classmap": [
+            "src"
+        ]
+    },
+    "authors": [
+        {
+            "name": "muqsit"
+        }
+    ],
+    "require": {
+        "muqsit/invmenu": "dev-pm5",
+        "sof3/libasynql": "dev-master"
+    }
+}

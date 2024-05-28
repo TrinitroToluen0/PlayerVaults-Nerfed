@@ -57,7 +57,7 @@ class Vault{
 		private string $player_name,
 		private int $number
 	){
-		$this->menu = InvMenu::create(InvMenu::TYPE_DOUBLE_CHEST)
+		$this->menu = InvMenu::create(InvMenu::TYPE_HOPPER)
 			->setListener(function(InvMenuTransaction $transaction) : InvMenuTransactionResult{
 				$player = $transaction->getPlayer();
 				if(strtolower($this->player_name) === strtolower($player->getName()) || $player->hasPermission("playervaults.others.edit")){
