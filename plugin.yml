@@ -9,6 +9,10 @@ commands:
 permissions:
   playervaults.command:
     default: true
+  playervaults.vault.1:
+    default: true
+  playervaults.vault.2:
+    default: true
   playervaults.vault.3:
     default: true
   playervaults.others.edit:
