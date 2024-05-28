@@ -5,6 +5,7 @@ version: 3.5.3
 commands:
   playervault:
     permission: playervaults.command
+    description: "Open your vaults"
     aliases: ["pv", "ec"]
 permissions:
   playervaults.command:

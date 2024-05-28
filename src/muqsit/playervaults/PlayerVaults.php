@@ -178,13 +178,8 @@ final class PlayerVaults extends PluginBase{
 			$sender->sendMessage(TextFormat::RED . "This command can only be executed as a player.");
 			return true;
 		}
-		
-		if(!isset($args[0])){
-			$sender->sendMessage(TextFormat::RED . "Usage: /" . $label . " <number> " . ($sender->hasPermission("playervaults.others.view") ? "[player=YOU]" : ""));
-			return true;
-		}
 
-		$number = (int) $args[0];
+		$number = isset($args[0]) ? (int) $args[0] : 1;
 		$player = $args[1] ?? $sender->getName();
 		try{
 			$this->tryAccessingVault($sender, $player, $number);
@@ -193,7 +188,6 @@ final class PlayerVaults extends PluginBase{
 			return true;
 		}
 
-		$sender->sendMessage(TextFormat::GRAY . "Opening" . (strtolower($player) === strtolower($sender->getName()) ? "" : " {$player}'s") . " vault #{$number}...");
 		$uuid = $sender->getUniqueId();
 		$this->openVault($sender, $player, $number, static function(Vault $_) : void{}, function(PlayerVaultsException $e) use($uuid) : void{
 			$sender = $this->getServer()->getPlayerByUUID($uuid);
